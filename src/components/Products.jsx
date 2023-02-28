@@ -31,7 +31,7 @@ const Products = () => {
 
                         <div ref={productIdRef} id={product.id} className="bottom-0 py-3 bg-orange-500 font-serif font-semibold text-white  hover:animate-pulse cursor-pointer"
                             onClick={productIdHandler}>
-                            Add to Cart 
+                                More Detail
                         </div>
                     </div>
                 ) 
