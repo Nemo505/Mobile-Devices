@@ -12,7 +12,7 @@ const Detail = () => {
           return( product.id == location.state.productId ?
             <div key={product.id} >
               
-              <div className='bg-gray-500 flex' style={{height:'83vh'}}>
+              <div className='bg-gray-500 flex ' style={{height:'84vh'}}>
                       <div className='bg-white m-auto p-10 text-center shadow-xl'>
               
                         <div className='flex items-center mr-0 gap-2 mx-auto'>
@@ -30,7 +30,7 @@ const Detail = () => {
                                 <div className='md:flex gap-3'>
                                   <select name="cars" id="cars" 
                                     className='shadow border border-red-700 rounded px-9 text-gray-600 '>
-                                    <option value="volvo">Volvo</option>
+                                    <option value="volvo">Select</option>
                                     <option value="saab">Saab</option>
                                     <option value="opel">Opel</option>
                                     <option value="audi">Audi</option>

@@ -7,10 +7,11 @@ const Products = () => {
         const arrayColor = ["#f87171", "#ea580c", "#fbbf24"]
         return arrayColor[0];
     }
-    const productIdRef = useRef();
+    // const productIdRef = useRef();
     const navigate = useNavigate();
-    const productIdHandler = () => {
-        navigate("/detail", {state:{productId:productIdRef.current.id}})
+    const handleClick= (id, e) => {
+        navigate("/detail", {state:{productId:id}})
+        console.log(id);
     }
   return (
     <div className='container mx-auto'>
@@ -29,8 +30,8 @@ const Products = () => {
                         <div className='font-extralight font-sans text-gray-600 from-neutral-700 my-2 h-15'>{product.description.substring(0, 20)}</div>
                         <div className={`font-bold my-3 ${randomColor}`}>${product.price}</div>
 
-                        <div ref={productIdRef} id={product.id} className="bottom-0 py-3 bg-orange-500 font-serif font-semibold text-white  hover:animate-pulse cursor-pointer"
-                            onClick={productIdHandler}>
+                        <div  id={product.id} className="bottom-0 py-3 bg-orange-500 font-serif font-semibold text-white  hover:animate-pulse cursor-pointer"
+                            onClick={(e) => handleClick(product.id,e)}>
                                 More Detail
                         </div>
                     </div>
