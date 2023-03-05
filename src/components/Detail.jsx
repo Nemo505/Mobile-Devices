@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import products from '../dummy/products.json'
+import { Link } from 'react-router-dom'
+import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
 
 const Detail = () => {
     const [count, setCount] = useState(0);
@@ -17,9 +19,13 @@ const Detail = () => {
       {
         products.products.map((product)=> {
           return( product.id == location.state.productId ?
-            <div key={product.id} >
-              
-              <div className='bg-gray-500 flex items-center justify-center ' style={{height: "85vh"}}>
+            <div key={product.id}  className="bg-gray-500">
+              <Link to={"/products"} className='hover:text-orange-600'>
+                <KeyboardDoubleArrowLeftIcon className='flex-none mr-2'/>
+                <span>Back</span>
+              </Link>
+              <div className='flex items-center justify-center ' style={{height: "85vh"}}>
+        
                   <div className='grid md:grid-cols-2 gap-4 py-2 bg-white md:h-4/5'>
     
                     <div className='col-span-1 m-auto md:px-2'>

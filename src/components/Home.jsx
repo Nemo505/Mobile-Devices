@@ -1,5 +1,6 @@
 import React from 'react'
 import Case from '../assets/case.jpg'
+import { Link } from 'react-router-dom';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 
 const Home = () => {
@@ -8,10 +9,10 @@ const Home = () => {
       <div className='py-5 text-center'>
         <p className='text-4xl  font-bold font-serif pb-5 '>Get The Base Product 
             <span className='font text-orange-600'> At your Home</span></p> 
-        <button className='hover:animate-pulse p-3 rounded-md font-serif bg-white '>
+        <Link to={"/products"} className='hover:animate-pulse p-3 rounded-md font-serif bg-white '>
           Shop Now
           <span ><KeyboardDoubleArrowRightIcon className='text-orange-600' /></span>
-        </button>
+        </Link>
       </div>
       <div>
         <img src={Case} alt="" className='rounded-md md:h-[50vh] h-[40vh] mx-auto' />
