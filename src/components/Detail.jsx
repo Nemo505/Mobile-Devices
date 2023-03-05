@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import products from '../dummy/products.json'
 
 const Detail = () => {
+    const [count, setCount] = useState(0);
+    const minus = () => {
+      setCount( count => count > 0 ? count-1 : 0)  
+    }
+
     const location = useLocation();
     console.log(location.state.productId);
+
+
   return (
     <div>
       {
@@ -28,15 +35,18 @@ const Detail = () => {
               
                                 <label htmlFor="cars">Stock</label>
                                 <div className='md:flex gap-3'>
-                                  <select name="cars" id="cars" 
-                                    className='shadow border border-red-700 rounded px-9 text-gray-600 '>
-                                    <option value="volvo">Select</option>
-                                    <option value="saab">Saab</option>
-                                    <option value="opel">Opel</option>
-                                    <option value="audi">Audi</option>
-                                  </select>
-              
-                                  <button className='border px-7 py-1 my-2 rounded text-white bg-red-500'> Add to Cart</button>
+                                  <div className='flex gap-3 items-center'>
+                                    <button onClick={minus}>
+                                      -
+                                    </button>
+                                    <div className='px-5 bg-slate-200 border border-red-500 rounded-md'>
+                                        {count}
+                                    </div>
+                                    <button onClick={() => setCount(count => count < product.stock ? count+1: count)}>
+                                      +
+                                    </button>
+                                  </div>
+                                  <button className='border px-7 py-1 my-2 rounded-md text-white bg-red-500'> Add to Cart</button>
                                 </div>
               
                             </div>
